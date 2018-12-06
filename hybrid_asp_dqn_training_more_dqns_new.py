@@ -230,13 +230,15 @@ def throwdice(threshold):
     else:
         return False
 
-def obtainedKey(previoustate,nextstate):
+
+def obtainedKey(previoustate, nextstate):
     if ("picked(key)" not in previoustate) and ("picked(key)" in nextstate):
         return True
     else:
         return False
 
-def openDoor(previoustate,nextstate):
+
+def openDoor(previoustate, nextstate):
     if ("picked(key)" in previoustate) and ("at(right_door)" not in previoustate) and ("picked(key)" in nextstate) and ("at(right_door)" in nextstate):
         return True
     else:
@@ -247,7 +249,7 @@ def main():
 
     visualizer = TensorboardVisualizer()
     logdir = path.join(recordFolder+'/') ## subject to change
-    visualizer.initialize(logdir,None)
+    visualizer.initialize(logdir, None)
 
     actionMap = [0, 1, 2, 3, 4, 5, 11, 12]
 
